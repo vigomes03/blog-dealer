@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 // Rotas relacionadas a POSTS
-Route::get('/', 'PostsController@list_posts')->name('home');
+Route::any('/', 'PostsController@list_posts')->name('/');
 Route::get('/new_post', 'PostsController@new_post')->name('new_post');
 Route::post('/save_post', 'PostsController@save_post')->name('save_post');
 Route::post('/update_post', 'PostsController@update_post')->name('update_post');

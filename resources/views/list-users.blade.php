@@ -27,7 +27,6 @@
 
                         @foreach ($users as $user)
                             <a class="pointer-click" onclick="event.preventDefault();$('#id_update_user').val( {{$user->id}} ); $('#update_user').submit();"> {{$user->name}} </a> <br>
-
                         @endforeach
 
                     @endif
@@ -43,4 +42,5 @@
         </div>
     </div>
 </div>
+
 @endsection

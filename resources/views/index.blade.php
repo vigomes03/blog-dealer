@@ -18,6 +18,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+
+            <br>
+            <form id="pesquisa" name="pesquisa" method="POST" action="{{ route('/') }}">
+                @csrf
+                <input type="text" id="pesquisa" name="pesquisa" style="height: 33px;position: relative;top: 3px;">
+                <button type="submit" class="btn btn-primary">
+                    {{ __('Pesquisar') }}
+                </button>
+            </form>
+            <br>
+            <br>
+
+
             <div class="card">
                 <div class="card-header">Post List</div>
 

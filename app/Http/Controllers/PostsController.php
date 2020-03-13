@@ -11,14 +11,34 @@ use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller {
 
-
-
     public function list_posts(Request $request) {
 
         $data = $request->all();
 
-        // GET
-        $posts = Posts::where('status',  'A')->get();
+        if (array_key_exists("pesquisa",$data)) {
+
+            $pesquisa = $data["pesquisa"];
+            $array_ids = array();
+
+            $posts = Posts::where('title', 'like', "%$pesquisa%")->get();
+
+            foreach ($posts as $post) {
+                $array_ids[] = $post->id;
+            }
+
+            $posts = Posts::where('body', 'like', "%$pesquisa%")->get();
+
+            foreach ($posts as $post) {
+                $array_ids[] = $post->id;
+            }
+
+            $posts = Posts::wherein('status',  $array_ids)->where('status',  'A')->get();
+
+        } else {
+            $posts = Posts::where('status',  'A')->get();
+        }
+
+
 
         foreach ($posts as $post) {            
             $author = \App\User::find($post->id_user);
