@@ -1,8 +1,6 @@
-# PDS02-GEDISA-SIA #
-
 # README #
 
-Informações de instalação e configuração da aplicação em servidores com base em apache, assim também como correções para erros comuns.
+Informações de instalação e configuração da aplicação, assim também como correções para erros comuns.
 
 ### Requisitos do sistema ###
 
