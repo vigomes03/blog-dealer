@@ -1,0 +1,11 @@
+Commands List
+
+composer create-project --prefer-dist laravel/laravel blog-dealer
+
+composer require laravel/ui
+
+php artisan ui vue --auth
+
+php artisan make:model posts -a
+
+php artisan storage:link
